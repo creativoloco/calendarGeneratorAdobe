@@ -1,0 +1,6 @@
+.day-container{
+  position: absolute;
+}
+.day-container > *{
+  position: absolute;
+}

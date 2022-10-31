@@ -1,15 +1,16 @@
 import React, {useState} from 'react'
-import "./Box.css"
+import './AnchorSelector.css'
 
 type propType= {
-  width: number, height:number
+  width: number,
+  height:number,
 }
 
-
-const Box = (props:propType)=>{
-  const smallPointSize = "5px";
-  const smallPointColor = "red"
-  const hoverColor = "#F005" // ONLY HEX VALES IS ALLOWED
+const smallPointSize = "5px";
+const smallPointColor = "red"
+const hoverColor = "#F005" // ONLY HEX VALES ARE ALLOWED
+  
+const AnchorSelector = (props:propType)=>{
 
   const [ style, setStyle ] = useState<React.CSSProperties>( {
     width: props.width + 'px',
@@ -67,7 +68,6 @@ const Box = (props:propType)=>{
       }
       return prevStyle
     });
-
   }
 
   /**
@@ -103,11 +103,11 @@ const Box = (props:propType)=>{
   }
 
   return (
-    <div className="box" style={style} onClick={setAnchorPointer}
+    <div className="anchor-selector" style={style} onClick={setAnchorPointer}
       onMouseMove={moveIndicator} onMouseEnter={addIndicator} onMouseLeave={removeIndicator}
     ></div>
   )
 }
 
 
-export default Box;
+export default AnchorSelector;
